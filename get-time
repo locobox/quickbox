@@ -1,0 +1,40 @@
+#!/usr/bin/python
+
+from datetime import datetime
+
+# find more directives here: http://docs.python.org/library/time.html (also: t.hour = 24hr period)
+t = datetime.now()
+
+#print "content-type:text/html"
+print
+
+#  condition: if 12am
+if "AM"==t.strftime("%p") and (t.hour == 0 ):
+  localampm="early morning.  Got coffee?"
+
+# condition: if 1-7am
+if "AM"==t.strftime("%p") and (t.hour >= 1 ) and (t.hour <= 7 ):
+  localampm="early morning.  Got coffee?"
+
+# condition: if 8-11am
+if "AM"==t.strftime("%p") and (t.hour >= 8 ) and (t.hour <= 11 ):
+  localampm="morning.  Got coffee?"
+
+# condition: if 1-6pm
+if "PM"==t.strftime("%p") and (t.hour >= 12 ) and (t.hour <= 18 ):
+  localampm="afternoon!"
+
+
+# condition: if 7-8pm
+if "PM"==t.strftime("%p") and (t.hour >= 19 ) and (t.hour <= 20 ):
+  localampm="evening!"
+
+# condition: 9-11pm
+if "PM"==t.strftime("%p") and (t.hour >= 21 ) and (t.hour <= 23 ):
+  localampm="night.  Got coffee?"
+
+#username = "l0c0b0x" 
+username = raw_input("Type your name: ")
+
+print "Greetings %s, the time is %s on this fine %s %s" % \
+(username,t.strftime("%I:%M"),t.strftime("%A"),localampm)
