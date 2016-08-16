@@ -1,0 +1,13 @@
+alias editbash="sudo nano ~/.bashrc"    #Edit bashrc with sudo juice
+alias bashedit="sudo nano ~/.bashrc"    #Edit bashrc with sudo juice
+alias reloadbash=". ~/.bashrc"  #Reload bashrc
+alias bashreload=". ~/.bashrc"  #Reload bashrc
+alias ports="netstat -tulanp"   #Check all open ports on host
+alias version="uname -a"        #Shows OS version, pretty much runs uname... a command I keep forgetting :\
+#alias whatsmyip="curl -s checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"  #runs a quick whatsmyip
+alias whatsmyip="curl http://ipecho.net/plain"
+alias pingo=AdvancedPing #Ping plus time and date per echo
+function AdvancedPing()
+{
+   ping $1 | ts
+}
